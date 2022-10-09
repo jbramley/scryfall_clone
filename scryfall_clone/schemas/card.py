@@ -1,14 +1,16 @@
+from typing import Optional
+
 from pydantic import BaseModel, Field
 
 
 class CardInDBBase(BaseModel):
     id: int
     name: str
-    manaCost: str
+    manaCost: Optional[str]
     rarity: str
     set_code: str = Field(alias="setCode")
     types: str
-    keywords: str
+    keywords: Optional[str]
     text: str
 
     class Config:
